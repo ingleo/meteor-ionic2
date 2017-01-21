@@ -1,0 +1,23 @@
+import { Component } from '@angular/core';
+import { MenuController, Platform, App } from 'ionic-angular';
+import { InitialMobileComponent } from './initial.mobile.component';
+
+import template from './app.mobile.component.html';
+
+if (Meteor.isCordova) {
+    require('ionic-angular/css/ionic.css');
+}
+
+@Component({
+    selector: 'app',
+    template
+})
+export class AppMobileComponent {
+
+    rootPage: any;
+
+    constructor(app: App, platform: Platform, menu: MenuController) {
+        this.rootPage = InitialMobileComponent;
+    }
+
+}
